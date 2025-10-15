@@ -16,9 +16,7 @@ fi
 # Create directory structure
 mkdir -p $BASE_DIR/{app,modules,assets,config}
 
-# --------------------------
 # Populate reminder.sh
-# --------------------------
 cat << 'EOF' > $BASE_DIR/app/reminder.sh
 #!/bin/bash
 
@@ -37,9 +35,7 @@ echo "--------------------------------------------"
 check_submissions $submissions_file
 EOF
 
-# --------------------------
 # Populate functions.sh
-# --------------------------
 cat << 'EOF' > $BASE_DIR/modules/functions.sh
 #!/bin/bash
 
@@ -63,18 +59,14 @@ function check_submissions {
 }
 EOF
 
-# --------------------------
 # Populate config.env
-# --------------------------
 cat << 'EOF' > $BASE_DIR/config/config.env
 # This is the config file
 ASSIGNMENT="Shell Navigation"
 DAYS_REMAINING=2
 EOF
 
-# --------------------------
 # Populate submissions.txt (with 5 more students)
-# --------------------------
 cat << 'EOF' > $BASE_DIR/assets/submissions.txt
 student, assignment, submission status
 Chinemerem, Shell Navigation, not submitted
@@ -88,9 +80,8 @@ Tanya, Shell Basics, not submitted
 Kabelo, Shell Navigation, not submitted
 EOF
 
-# --------------------------
+
 # Create startup.sh
-# --------------------------
 cat << 'EOF' > $BASE_DIR/startup.sh
 #!/bin/bash
 # startup.sh - Launch the reminder app
@@ -102,9 +93,7 @@ cd "$(dirname "$0")"
 bash ./app/reminder.sh
 EOF
 
-# --------------------------
 # Make all shell scripts executable
-# --------------------------
 find $BASE_DIR -type f -name "*.sh" -exec chmod +x {} \;
 
 echo "Environment created successfully in $BASE_DIR!"
