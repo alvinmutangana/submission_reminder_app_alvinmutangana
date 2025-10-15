@@ -13,4 +13,7 @@ Instructions
 cd submission_reminder_app_<your-username>
 run: bash create_environment.sh
 You'll be prompted for your name, creating a directory named submission_reminder_{yourName}/
+After creation, run: bash submission_reminder_{yourName}/startup.sh
+To change the assignment being tracked, run: bash copilot_shell_script.sh
+
 
